@@ -12,9 +12,11 @@ struct
         val timestamp = Date.fromTimeUniv (Time.now ())
         val msg =
           "[" ^ Date.fmt C.dateFmt timestamp ^ "]" ^
+          "\t" ^
           Level.toString withLevel ^
           "\t" ^
-          msg
+          msg ^
+          "\n"
       in
         (TextIO.output (C.out, C.postProcess msg); TextIO.flushOut C.out)
       end
