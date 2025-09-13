@@ -1,0 +1,9 @@
+local
+	$(SML_LIB)/basis/basis.mlb
+in
+	Level.sml
+	LoggerConfig.sig
+	Logger.sig
+	Logger.fun
+	Logger.sml
+end
