@@ -1,8 +1,12 @@
-functor LoggerFn(C: LOGGER_CONFIG): LOGGER =
+(* Create loggers with dynamically adjustable logging levels *)
+functor DynamicLoggerFn(C: LOGGER_CONFIG): LOGGER =
 struct
   type msg = {timestamp: Date.date, body: string}
   
   val level = ref Level.INFO
+
+  fun setLevel l = level := l
+  fun getLevel () = ! level
 
   fun log withLevel msg =
     case Level.compare (withLevel, ! level) of
