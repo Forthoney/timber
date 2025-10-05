@@ -4,6 +4,7 @@ in
 	Level.sml
 	LoggerConfig.sig
 	Logger.sig
-	Logger.fun
+	DynamicLogger.fun
+	StaticLogger.fun
 	Logger.sml
 end
